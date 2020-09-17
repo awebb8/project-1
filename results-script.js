@@ -1,6 +1,8 @@
 var containerBodyEl = $("#container-body");
 var primaryRowEl = $("#primary-row");
-var titleRowEl = $("#title-row")
+var titleRowEl = $("#title-row");
+
+
 
 // add array of objects to simulate taking results from local storage api data.
 // array of objects is goal for the rest of today.
@@ -9,7 +11,8 @@ var titleRowEl = $("#title-row")
 //recipe version depending on the choice made.
 //stretch goal for today. goal for friday.
 
-function onLoad() {
+function showResults() {
+
 
 $("primary-row").empty();
 for(var i=0; i<10; i++){
@@ -53,8 +56,8 @@ for(var i=0; i<10; i++){
     );
 
     $("#primary-row").append(resultsCard);
-
+        
     }
 }
 
-onLoad();
+showResults();
