@@ -39,7 +39,7 @@ $(document).ready(function() {
                 // Store the response in localStorage so we can retrieve it later in a seperate JS file
                 localStorage.setItem("restaurants", JSON.stringify(response));
             });
-
+            
         }
 
     });
