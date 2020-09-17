@@ -25,7 +25,7 @@ $(document).ready(function() {
             }).then(function(response) {
                 console.log(response);
                 // Store the response in localStorage so we can retrieve it later in a seperate JS file
-                localStorage.setItem("recipes", JSON.stringify(response));
+                localStorage.setItem("recipesSearchResults", JSON.stringify(response));
             });
 
         }
@@ -38,7 +38,7 @@ $(document).ready(function() {
             }).then(function(response) {
                 console.log(response);
                 // Store the response in localStorage so we can retrieve it later in a seperate JS file
-                localStorage.setItem("restaurants", JSON.stringify(response));
+                localStorage.setItem("restaurantsSearchResults", JSON.stringify(response));
             });
 
         }
