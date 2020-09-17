@@ -32,6 +32,11 @@ $.ajax ({
         recipeDisplay.append(ingredientList);
     }
 
+    // Add Wine Pairing
+    var wineDisplay = $("#wine-display");
+    var winePairingText = $("<p>");
+    winePairingText.text(response.winePairing.pairingText);
+    wineDisplay.append(winePairingText);
 
 });
 
