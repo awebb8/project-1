@@ -4,14 +4,6 @@ $(document).ready(function() {
     const ZOMATOAPIKEY = "9723ed5e62a95b63e3f30544b70f8fdb";
     const SPOONAPIKEY = "c27de7a75c74494f8fe916321c2ede25";
 
-
-    // $.ajax({
-    //     url: "https://api.spoonacular.com/recipes/complexSearch?query=pasta&apiKey=c27de7a75c74494f8fe916321c2ede25",
-    //     method: "GET"
-    // }).then(function(response) {
-    //     console.log(response);
-    // });
-
     // $.ajax({
     //     url: "https://api.spoonacular.com/recipes/654959/information?apiKey=c27de7a75c74494f8fe916321c2ede25",
     //     method: "GET"
@@ -30,7 +22,9 @@ $(document).ready(function() {
                 url: `https://api.spoonacular.com/recipes/complexSearch?query=${searchQuery}&apiKey=${SPOONAPIKEY}`,
                 method: "GET"
             }).then(function(response) {
-            console.log(response);
+                console.log(response);
+                // Store the response in localStorage so we can retrieve it later in a seperate JS file
+                localStorage.setItem("recipes", JSON.stringify(response));
             });
 
         }
@@ -42,12 +36,12 @@ $(document).ready(function() {
                 method: "GET"
             }).then(function(response) {
                 console.log(response);
+                // Store the response in localStorage so we can retrieve it later in a seperate JS file
+                localStorage.setItem("restaurants", JSON.stringify(response));
             });
-
 
         }
 
     });
-
 
 });
