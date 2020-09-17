@@ -1,0 +1,38 @@
+body {
+    background-color: #D4A59A;
+    height: 100%;
+}
+
+.container {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+}
+
+.navbar {
+    background-color: #5C2018!important;
+    color: white;
+}
+
+/* search button */
+#search-button {
+    background-color: #4285F4;
+    color: white;
+    border-color: white;
+}
+#search-button:hover {
+    color: black;
+    border-color: black;
+}
+#search-button:active {
+    background-color: #5C2018;
+}
+
+.radiobuttons {
+    margin-left: 20px;
+}
