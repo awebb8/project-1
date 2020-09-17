@@ -1,15 +1,27 @@
+var containerBodyEl = $("#container-body");
+var primaryRowEl = $("#primary-row");
+var titleRowEl = $("#title-row")
 
+// add array of objects to simulate taking results from local storage api data.
+// array of objects is goal for the rest of today.
 
+// have code dynamically generate the page for a restaurant or -
+//recipe version depending on the choice made.
+//stretch goal for today. goal for friday.
+
+function onLoad() {
 
 $("primary-row").empty();
-for(var i=0; i<10; i++){ // currently iterates only 10 times. will need to set it to iterate based on the results sent.
-    var resultCard = $("<div class='card col-sm-3 results-card'>");
+for(var i=0; i<10; i++){
+    var resultsCard = $("<div class='card card-body col-sm-3 results-card'>");
 
-    var resultsImg = $("<img>");
-    iconImg.attr("src", "http://placekitten.com/200/200");
+    var resultsImg = $("<img class='card-img-top' alt='placeholder'>");
+    resultsImg.attr("src", "http://placekitten.com/300/300");
 
     var resultsTitle = $("<h6 class='card-header'>");
     resultsTitle.text("Restaurant/recipe name");
+
+    var resultsList =$("<ul class='list-group list-group-flush'>")
 
     var ratingLine = $("<li class='list-group-item'>");
     ratingLine.text("Rating");
@@ -26,9 +38,7 @@ for(var i=0; i<10; i++){ // currently iterates only 10 times. will need to set i
     var hoursLine = $("<li class='list-group-item'>");
     hoursLine.text("Hours");
 
-    resultsCard.append(
-        resultsImg,
-        resultsTitle,
+    resultsList.append(
         ratingLine,
         locationLine,
         cuisineLine,
@@ -36,11 +46,18 @@ for(var i=0; i<10; i++){ // currently iterates only 10 times. will need to set i
         hoursLine
     );
 
-    $("#primary-row").append(forecastCard);
+    resultsCard.append(
+        resultsImg,
+        resultsTitle,
+        resultsList   
+    );
 
+    $("#primary-row").append(resultsCard);
 
+    }
 }
 
+onLoad();
 
 
 
