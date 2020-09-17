@@ -19,22 +19,35 @@ $(document).ready(function() {
     //     console.log(response);
     // });
 
+    $("#search-button").on("click", function() {
+        // Store user search into searchQuery variable
+        var searchQuery = $("#search-input").val();
 
-    $(".search_icon").on("click", function() {
-        console.log("you clicked the button: " + $(".search_input").val());
-        var searchQuery = $(".search_input").val();
-
-        // Make AJAX call to Zomato based on user query
-        $.ajax({
-            url: `https://developers.zomato.com/api/v2.1/search?q=${searchQuery}&apikey=${ZOMATOAPIKEY}`,
-            method: "GET"
-        }).then(function(response) {
+        // Check which radio button user selected
+        if($("input[type=radio]:checked", ".radiobuttons").val() === "option1") {
+            // User selected Eat In - Make AJAX call to Spoonacular
+            $.ajax({
+                url: `https://api.spoonacular.com/recipes/complexSearch?query=${searchQuery}&apiKey=${SPOONAPIKEY}`,
+                method: "GET"
+            }).then(function(response) {
             console.log(response);
-        });
+            });
 
-        
+        }
 
+        else {
+            // User selected Eat Out - Make AJAX call to Zomato
+            $.ajax({
+                url: `https://developers.zomato.com/api/v2.1/search?q=${searchQuery}&apikey=${ZOMATOAPIKEY}`,
+                method: "GET"
+            }).then(function(response) {
+                console.log(response);
+            });
+
+
+        }
 
     });
+
 
 });
