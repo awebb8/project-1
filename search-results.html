@@ -6,12 +6,130 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="./results-style.css">
     </head>
-    <body>
-        <h1>Hello World!</h1>
-        
-        
-        <script src="" async defer></script>
+    <body >
+
+        <nav class="navbar navbar-dark bg-dark" id="dinner-navbar" > <!-- change style later -->
+            <span class="navbar mb-0 h1">What's For Dinner?!</span>
+        </nav>
+
+        <div class="container card" id="container-body">
+            <div class="row">
+                <h4 class="card col-sm-12" id="title-row">Results for: </h4>
+            </div>
+            <div class="row card-body" id="primary-row" >
+
+
+                <!-- <div class="card card-body col-sm-3 results-card">
+                    <img src="http://placekitten.com/300/300" class="card-img-top" alt="...">
+                    <h6 class="card-header">
+                      Restaurant/recipe name.
+                    </h6>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">Rating</li>
+                      <li class="list-group-item">location</li>
+                      <li class="list-group-item">cuisines type</li>
+                      <li class="list-group-item">cost</li>
+                      <li class="list-group-item">hours</li>
+                    </ul>
+                  </div> -->
+
+                  <!-- <div class="card card-body col-sm-3 results-card" >
+                    <img src="http://placekitten.com/90/90" class="card-img-top" alt="...">
+                    <div class="card-header">
+                      Featured
+                    </div>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">Cras justo odio</li>
+                      <li class="list-group-item">Dapibus ac facilisis in</li>
+                      <li class="list-group-item">Vestibulum at eros</li>
+                    </ul>
+                  </div>
+
+                  <div class="card card-body col-sm-3 results-card">
+                    <img src="http://placekitten.com/90/90" class="card-img-top" alt="...">
+                    <div class="card-header">
+                      Featured
+                    </div>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">Cras justo odio</li>
+                      <li class="list-group-item">Dapibus ac facilisis in</li>
+                      <li class="list-group-item">Vestibulum at eros</li>
+                    </ul>
+                  </div>
+
+                
+                  <div class="card card-body col-sm-3 results-card">
+                    <img src="http://placekitten.com/90/90" class="card-img-top" alt="...">
+                    <div class="card-header">
+                      Featured
+                    </div>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">Cras justo odio</li>
+                      <li class="list-group-item">Dapibus ac facilisis in</li>
+                      <li class="list-group-item">Vestibulum at eros</li>
+                    </ul>
+                  </div>
+            
+                <div class="card card-body col-sm-3 results-card">
+                    <img src="http://placekitten.com/90/90" class="card-img-top" alt="...">
+                    <div class="card-header">
+                        Featured
+                    </div>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">Cras justo odio</li>
+                      <li class="list-group-item">Dapibus ac facilisis in</li>
+                      <li class="list-group-item">Vestibulum at eros</li>
+                    </ul>
+                  </div>
+
+                  <div class="card card-body col-sm-3 results-card">
+                    <img src="http://placekitten.com/90/90" class="card-img-top" alt="...">
+                    <div class="card-header">
+                        Featured
+                    </div>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">Cras justo odio</li>
+                      <li class="list-group-item">Dapibus ac facilisis in</li>
+                      <li class="list-group-item">Vestibulum at eros</li>
+                    </ul>
+                  </div>
+
+                
+                  <div class="card card-body col-sm-3 results-card">
+                    <img src="http://placekitten.com/90/90" class="card-img-top" alt="...">
+                    <div class="card-header">
+                        Featured
+                    </div>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">Cras justo odio</li>
+                      <li class="list-group-item">Dapibus ac facilisis in</li>
+                      <li class="list-group-item">Vestibulum at eros</li>
+                    </ul>
+                  </div>
+
+                  <div class="card card-body col-sm-3 results-card">
+                    <img src="http://placekitten.com/90/90" class="card-img-top" alt="...">
+                    <div class="card-header">
+                        Featured
+                    </div>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">Cras justo odio</li>
+                      <li class="list-group-item">Dapibus ac facilisis in</li>
+                      <li class="list-group-item">Vestibulum at eros</li>
+                    </ul>
+                  </div> -->
+
+            </div>
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="./results-script.js" async defer></script>
     </body>
 </html>
