@@ -1,10 +1,48 @@
+
+
+
 $("primary-row").empty();
-for(var i=0; i<10; i++){ // currently iterates only 9 times. will need to set it to iterate based on the results sent.
+for(var i=0; i<10; i++){ // currently iterates only 10 times. will need to set it to iterate based on the results sent.
     var resultCard = $("<div class='card col-sm-3 results-card'>");
+
+    var resultsImg = $("<img>");
+    iconImg.attr("src", "http://placekitten.com/200/200");
+
+    var resultsTitle = $("<h6 class='card-header'>");
+    resultsTitle.text("Restaurant/recipe name");
+
+    var ratingLine = $("<li class='list-group-item'>");
+    ratingLine.text("Rating");
+
+    var locationLine = $("<li class='list-group-item'>");
+    locationLine.text("location");
+
+    var cuisineLine = $("<li class='list-group-item'>");
+    cuisineLine.text("Cuisine Type");
+
+    var costLine = $("<li class='list-group-item'>");
+    costLine.text("Cost");
+
+    var hoursLine = $("<li class='list-group-item'>");
+    hoursLine.text("Hours");
+
+    resultsCard.append(
+        resultsImg,
+        resultsTitle,
+        ratingLine,
+        locationLine,
+        cuisineLine,
+        costLine,
+        hoursLine
+    );
+
+    $("#primary-row").append(forecastCard);
+
+
 }
 
 
-var resultsTitle =$("<h6>");
+
 
 // var forecastQueryURL =
 // "https://api.openweathermap.org/data/2.5/onecall?units=imperial&lat=" +
