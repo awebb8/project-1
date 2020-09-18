@@ -43,6 +43,10 @@ $(document).ready(function() {
 
         }
 
+        // After making AJAX call, redirect user to search-results.html
+        window.location.href = "search-results.html";
+
+
     });
 
 
