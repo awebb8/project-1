@@ -21,8 +21,13 @@ $(document).ready(function() {
     // on click event for image.
     $(".results-image").on("click", function(){
         localStorage.setItem("recipeDataId", $(this).attr("data-id"));
-        window.location.href = "recipe-selected.html"
         
+        if(localStorage.getItem("userRadioButtonOption")) {
+            window.location.href = "recipe-selected.html"
+        }
+        else {
+            window.location.href = "restaurant-selected.html"
+        }
     });
    
     

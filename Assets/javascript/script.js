@@ -30,20 +30,6 @@ $(document).ready(function() {
         }
 
         else {
-            // User selected Eat Out - Make AJAX call to Zomato
-            // $.ajax({
-            //     url: `https://developers.zomato.com/api/v2.1/search?q=${searchQuery}&apikey=${ZOMATOAPIKEY}`,
-            //     method: "GET"
-            // }).then(function(response) {
-            //     console.log(response);
-            //     // Store the response in localStorage so we can retrieve it later in a seperate JS file
-            //     localStorage.setItem("restaurantsSearchResults", JSON.stringify(response));
-
-            //     // After making AJAX call, redirect user to search-results.html
-            //     window.location.href = "search-results.html";                
-            // });
-
-
             function success(pos) {
                 var crd = pos.coords;
                 $.ajax({
@@ -63,8 +49,6 @@ $(document).ready(function() {
                 }
         
             navigator.geolocation.getCurrentPosition(success);
-
-
         }
 
 
