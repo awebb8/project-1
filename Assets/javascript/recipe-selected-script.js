@@ -4,7 +4,6 @@ const SPOONAPIKEY = "eedaf08410ff4e439dbac4b966ee5e86";
 var recipeId = localStorage.getItem("recipeDataId");
 
 
-
 $.ajax ({
     url: "https://api.spoonacular.com/recipes/" + recipeId + "/information?apiKey=" + SPOONAPIKEY + "&includeNutrition=true.",
     method: "GET"
