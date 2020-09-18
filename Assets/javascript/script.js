@@ -45,6 +45,7 @@ $(document).ready(function() {
 
 
             function success(pos) {
+                var crd = pos.coords;
                 $.ajax({
                     url: `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=${searchQuery}&latitude=${crd.latitude}&longitude=${crd.longitude}`,
                     headers: {
