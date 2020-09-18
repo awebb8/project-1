@@ -18,12 +18,7 @@ $(document).ready(function() {
         showRestaurantResults();
     }
     
-    // add array of objects to simulate taking results from local storage api data.
-    // array of objects is goal for the rest of today.
-    
-    // have code dynamically generate the page for a restaurant or -
-    //recipe version depending on the choice made.
-    //stretch goal for today. goal for friday.
+   
     
     // Dynamically update search-results.html with response from Spoonacular
     function showRecipeResults() {
