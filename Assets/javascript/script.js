@@ -30,19 +30,25 @@ $(document).ready(function() {
         }
 
         else {
-            // User selected Eat Out - Make AJAX call to Zomato
-            $.ajax({
-                url: `https://developers.zomato.com/api/v2.1/search?q=${searchQuery}&apikey=${ZOMATOAPIKEY}`,
-                method: "GET"
-            }).then(function(response) {
-                console.log(response);
-                // Store the response in localStorage so we can retrieve it later in a seperate JS file
-                localStorage.setItem("restaurantsSearchResults", JSON.stringify(response));
+            function success(pos) {
+                var crd = pos.coords;
+                $.ajax({
+                    url: `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=${searchQuery}&latitude=${crd.latitude}&longitude=${crd.longitude}`,
+                    headers: {
+                        'Authorization':'Bearer xQhqk6iKwI8rprXKZO006ZmPHJq4VXj3uHMkRTQl3Otj3mbw86-ZTGwW6CH5BEjuAY8pmnrwFGV3ReAAXIyh9c4o8SxD2yev4EXkaS9Ny9_MXdQq01_urRTbo45jX3Yx',
+                    },
+                    method: "GET",
+                    dataType: 'json'
+                }).then(function(response) {
+                    // Store the response in localStorage so we can retrieve it later in a seperate JS file
+                    localStorage.setItem("restaurantsSearchResults", JSON.stringify(response));
 
-                // After making AJAX call, redirect user to search-results.html
-                window.location.href = "search-results.html";                
-            });
-
+                    // After making AJAX call, redirect user to search-results.html
+                    window.location.href = "search-results.html";   
+                });
+                }
+        
+            navigator.geolocation.getCurrentPosition(success);
         }
 
 
