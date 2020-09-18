@@ -17,13 +17,15 @@ $(document).ready(function() {
         console.log(restaurantsSearchResult);
         showRestaurantResults();
     }
-    
-    // add array of objects to simulate taking results from local storage api data.
-    // array of objects is goal for the rest of today.
-    
-    // have code dynamically generate the page for a restaurant or -
-    //recipe version depending on the choice made.
-    //stretch goal for today. goal for friday.
+
+    // on click event for image.
+    $(".results-image").on("click", function(){
+        localStorage.setItem("recipeDataId", $(this).attr("data-id"));
+        window.location.href = "recipe-selected.html"
+        
+    });
+     
+   
     
     // Dynamically update search-results.html with response from Spoonacular
     function showRecipeResults() {
@@ -33,9 +35,11 @@ $(document).ready(function() {
     
         var resultsA = $("<a href='#'>");
 
-        var resultsImg = $("<img class='card-img-top' alt='placeholder'>");
+        var resultsImg = $("<img class='card-img-top results-image' alt='placeholder'>");
         resultsImg.attr("src", recipesSearchResults.results[i].image);
         resultsImg.attr("data-id", recipesSearchResults.results[i].id);
+        console.log("data-id");
+       
     
         var resultsTitle = $("<h6 class='card-header'>");
         resultsTitle.text(recipesSearchResults.results[i].title);
