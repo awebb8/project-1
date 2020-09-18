@@ -26,6 +26,9 @@ $(document).ready(function() {
                 console.log(response);
                 // Store the response in localStorage so we can retrieve it later in a seperate JS file
                 localStorage.setItem("recipesSearchResults", JSON.stringify(response));
+
+                // After making AJAX call, redirect user to search-results.html
+                window.location.href = "search-results.html";                    
             });
 
         }
@@ -39,12 +42,12 @@ $(document).ready(function() {
                 console.log(response);
                 // Store the response in localStorage so we can retrieve it later in a seperate JS file
                 localStorage.setItem("restaurantsSearchResults", JSON.stringify(response));
+
+                // After making AJAX call, redirect user to search-results.html
+                window.location.href = "search-results.html";                
             });
 
         }
-
-        // After making AJAX call, redirect user to search-results.html
-        window.location.href = "search-results.html";
 
 
     });

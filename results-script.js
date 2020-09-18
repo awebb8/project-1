@@ -4,7 +4,12 @@ $(document).ready(function() {
     var primaryRowEl = $("#primary-row");
     var titleRowEl = $("#title-row");
     
-    
+    // [dp] - Retrieve AJAX responses that are stored in localStorage
+    var recipesSearchResults = JSON.parse(localStorage.getItem("recipesSearchResults"));
+    var restaurantsSearchResult = JSON.parse(localStorage.getItem("restaurantsSearchResults"));
+
+    console.log(recipesSearchResults);
+    console.log(restaurantsSearchResult);
     
     // add array of objects to simulate taking results from local storage api data.
     // array of objects is goal for the rest of today.
