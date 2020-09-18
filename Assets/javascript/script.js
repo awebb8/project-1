@@ -6,13 +6,6 @@ $(document).ready(function() {
 
 
     // $.ajax({
-    //     url: "https://api.spoonacular.com/recipes/complexSearch?query=pasta&apiKey=c27de7a75c74494f8fe916321c2ede25",
-    //     method: "GET"
-    // }).then(function(response) {
-    //     console.log(response);
-    // });
-
-    // $.ajax({
     //     url: "https://api.spoonacular.com/recipes/654959/information?apiKey=c27de7a75c74494f8fe916321c2ede25",
     //     method: "GET"
     // }).then(function(response) {
@@ -30,7 +23,9 @@ $(document).ready(function() {
                 url: `https://api.spoonacular.com/recipes/complexSearch?query=${searchQuery}&apiKey=${SPOONAPIKEY}`,
                 method: "GET"
             }).then(function(response) {
-            console.log(response);
+                console.log(response);
+                // Store the response in localStorage so we can retrieve it later in a seperate JS file
+                localStorage.setItem("recipesSearchResults", JSON.stringify(response));
             });
 
         }
@@ -42,10 +37,15 @@ $(document).ready(function() {
                 method: "GET"
             }).then(function(response) {
                 console.log(response);
+                // Store the response in localStorage so we can retrieve it later in a seperate JS file
+                localStorage.setItem("restaurantsSearchResults", JSON.stringify(response));
             });
 
-
         }
+
+        // After making AJAX call, redirect user to search-results.html
+        window.location.href = "search-results.html";
+
 
     });
 
