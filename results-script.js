@@ -17,7 +17,14 @@ $(document).ready(function() {
         console.log(restaurantsSearchResult);
         showRestaurantResults();
     }
-    
+
+    // on click event for image.
+    $(".results-image").on("click", function(){
+        localStorage.setItem("recipeDataId", $(this).attr("data-id"));
+        window.location.href = "recipe-selected.html"
+        
+    });
+     
    
     
     // Dynamically update search-results.html with response from Spoonacular
@@ -28,9 +35,11 @@ $(document).ready(function() {
     
         var resultsA = $("<a href='#'>");
 
-        var resultsImg = $("<img class='card-img-top' alt='placeholder'>");
+        var resultsImg = $("<img class='card-img-top results-image' alt='placeholder'>");
         resultsImg.attr("src", recipesSearchResults.results[i].image);
         resultsImg.attr("data-id", recipesSearchResults.results[i].id);
+        console.log("data-id");
+       
     
         var resultsTitle = $("<h6 class='card-header'>");
         resultsTitle.text(recipesSearchResults.results[i].title);
