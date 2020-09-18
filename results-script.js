@@ -81,87 +81,80 @@ $(document).ready(function() {
     // Dynamically update search-results.html with response from Zomato
     function showRestaurantResults() {
         $("primary-row").empty();
-        for(var i=0; i<10; i++){
+        var count = 0;
+        var index = -1;
+        var timeInterval = setInterval(function() {
+            count++;
+            ajaxYelp();
+
+            if (count === 11) {
+            clearInterval(timeInterval);
+            }
+        }, 200);
 
 
+        function ajaxYelp() {
             // AJAX call to Yelp to grab images
             $.ajax({
-                url: `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=${restaurantsSearchResult.restaurants[i].restaurant.name}&location=${restaurantsSearchResult.restaurants[i].restaurant.location.city}`,
+                url: `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=${restaurantsSearchResult.restaurants[count].restaurant.name}&latitude=${restaurantsSearchResult.restaurants[count].restaurant.location.latitude}&longitude=${restaurantsSearchResult.restaurants[count].restaurant.location.longitude}`,
                 headers: {
                     'Authorization':'Bearer xQhqk6iKwI8rprXKZO006ZmPHJq4VXj3uHMkRTQl3Otj3mbw86-ZTGwW6CH5BEjuAY8pmnrwFGV3ReAAXIyh9c4o8SxD2yev4EXkaS9Ny9_MXdQq01_urRTbo45jX3Yx',
                 },
                 method: "GET",
                 dataType: 'json'
             }).then(function(response) {
+                index++;
                 console.log(response);
+                var resultsCard = $("<div class='card card-body col-sm-3 results-card'>");
+        
+                var resultsImg = $("<img class='card-img-top' alt='placeholder'>");
+                resultsImg.attr("src", response.businesses[0].image_url);
+            
+                var resultsTitle = $("<h6 class='card-header'>");
+                resultsTitle.text(restaurantsSearchResult.restaurants[index].restaurant.name);
+            
+                // var resultsList =$("<ul class='list-group list-group-flush'>")
+            
+                // var ratingLine = $("<li class='list-group-item'>");
+                // ratingLine.text("Rating");
+            
+                // var locationLine = $("<li class='list-group-item'>");
+                // locationLine.text("location");
+            
+                // var cuisineLine = $("<li class='list-group-item'>");
+                // cuisineLine.text("Cuisine Type");
+            
+                // var costLine = $("<li class='list-group-item'>");
+                // costLine.text("Cost");
+            
+                // var hoursLine = $("<li class='list-group-item'>");
+                // hoursLine.text("Hours");
+            
+                // resultsList.append(
+                //     ratingLine,
+                //     locationLine,
+                //     cuisineLine,
+                //     costLine,
+                //     hoursLine
+                // );
+            
+                resultsCard.append(
+                    resultsImg,
+                    resultsTitle,
+                    // resultsList   
+                );
+            
+                $("#primary-row").append(resultsCard);
+        
+
             });
-
-
-
-
-
-
-
-            var resultsCard = $("<div class='card card-body col-sm-3 results-card'>");
-        
-            // var resultsImg = $("<img class='card-img-top' alt='placeholder'>");
-            // resultsImg.attr("src", recipesSearchResults.results[i].image);
-        
-            var resultsTitle = $("<h6 class='card-header'>");
-            resultsTitle.text(restaurantsSearchResult.restaurants[i].restaurant.name);
-        
-            // var resultsList =$("<ul class='list-group list-group-flush'>")
-        
-            // var ratingLine = $("<li class='list-group-item'>");
-            // ratingLine.text("Rating");
-        
-            // var locationLine = $("<li class='list-group-item'>");
-            // locationLine.text("location");
-        
-            // var cuisineLine = $("<li class='list-group-item'>");
-            // cuisineLine.text("Cuisine Type");
-        
-            // var costLine = $("<li class='list-group-item'>");
-            // costLine.text("Cost");
-        
-            // var hoursLine = $("<li class='list-group-item'>");
-            // hoursLine.text("Hours");
-        
-            // resultsList.append(
-            //     ratingLine,
-            //     locationLine,
-            //     cuisineLine,
-            //     costLine,
-            //     hoursLine
-            // );
-        
-            resultsCard.append(
-                // resultsImg,
-                resultsTitle,
-                // resultsList   
-            );
-        
-            $("#primary-row").append(resultsCard);
-                
-            }
         }
 
 
+            
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+        }
 
 
 });
