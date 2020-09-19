@@ -37,18 +37,26 @@ $(document).ready(function(){
         // Displays rating in stars
         for(var i=0; i < 5; i++) {
             if(i < Math.floor(response.rating)) {
-                $(".col-sm-8").append($('<i class="fa fa-star fa-2x">'));
+                $("#ratings").append($('<i class="fa fa-star fa-2x">'));
             }
             else if((response.rating - Math.floor(response.rating)) > 0) {
-                $(".col-sm-8").append($('<i class="fa fa-star-half-o fa-2x">'));
+                $("#ratings").append($('<i class="fa fa-star-half-o fa-2x">'));
             }
             else {
-                $(".col-sm-8").append($('<i class="fa fa-star-o fa-2x">'));
+                $("#ratings").append($('<i class="fa fa-star-o fa-2x">'));
             }
         }
 
         // Displays number of reviews
-        $(".col-sm-8").append($("<p>").text(response.review_count + " ratings"));
+        $("#ratings").append("   " + response.review_count + " ratings");
+
+
+
+        ratingsStars.append($("<p>").text(response.price));
+        // $("#ratings").append($("<p>").text(response.price));
+
+
+
 
 
     });
