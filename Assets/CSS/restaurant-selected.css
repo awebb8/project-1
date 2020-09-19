@@ -1,0 +1,21 @@
+body {
+    background-color: #D4A59A;
+    height: 100%;
+}
+
+.container {
+    /* display: grid;
+    justify-content: center;
+    align-content: center;
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0; */
+    margin-top: 20px;
+}
+
+.navbar {
+    background-color: #5C2018!important;
+    color: white;
+}
