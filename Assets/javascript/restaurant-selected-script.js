@@ -92,14 +92,21 @@ $(document).ready(function(){
         
         }
 
+        // Displays restaurant phone number
+        $("#restaurant-phone").append($('<i class="fas fa-phone">'));
+        $("#restaurant-phone").append(response.display_phone);
+
         // Displays location of restaurant
         for(var i=0; i<response.location.display_address.length; i++){
             $("#restaurant-location").append($("<h6>").text(response.location.display_address[i]));
         }
 
-        // Displays restaurant phone number
-        $("#restaurant-phone").append($('<i class="fas fa-phone">'));
-        $("#restaurant-phone").append(response.display_phone);
+        // Displays restaurant location on google maps
+        $("#map").append($(`<iframe
+        frameborder="0" style="border:0"
+        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDoNlnCZJwCejPu0t0UHALWsc-1WnuwZdk
+          &q=${response.name}">`));
+
 
     });
 

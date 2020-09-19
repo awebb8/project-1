@@ -46,6 +46,17 @@ h3, h4 {
     font-family: 'Mali', cursive;
 }
 
+.table td, .table th {
+    border-top: 1px solid grey;
+}
+
+.table thead th {
+    border-bottom: 2px solid grey;
+}
+
+
+/* Restaurant Styling */
+
 .restaurantImg {
     width: 400px;
     height: 400px;
@@ -88,3 +99,20 @@ i {
     margin-top: 20px;
     border-radius: 30px;
 }
+
+
+h6 {
+    font-weight: 700;
+    margin-top: -5px;
+}
+
+#restaurant-name {
+    font-size: 40px;
+}
+
+iframe {
+    margin-top: 10px;
+    height: 250px;
+    width: 100%;
+}
+
