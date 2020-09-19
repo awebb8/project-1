@@ -35,7 +35,7 @@ $(document).ready(function() {
     function showRecipeResults() {
     $("primary-row").empty();
     for(var i=0; i<10; i++){
-        var resultsCard = $("<div class='card card-body col-sm-3 results-card'>");
+        var resultsCard = $("<div class='card card-body col-xs-3 results-card'>");
     
         var resultsA = $("<a href='#'>");
 
