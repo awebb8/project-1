@@ -13,3 +13,30 @@ img{
     width: 187.5px;
     height: 187.5px;
 }
+
+body {
+    background-color: #D4A59A;
+    height: 100%;
+}
+
+.navbar {
+    background-color: #5C2018!important;
+    color: white;
+}
+
+#primary-row{
+    background-color: #D4A59A;
+    align-content: center;
+}
+
+
+.results-card{
+    background-color: #5C2018;
+    color: white;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.container-fluid{
+   width: 80vw;
+}
