@@ -67,6 +67,7 @@ $(document).ready(function(){
             }
         }
 
+        // Displays if restaurant is open or closed and hours for that day **** not really working bc i'm pulling from index 0 insted of a dynamic index
         if(response.hours[0].is_open_now) {
             $("#hours").append($("<p id='open-text' class='open-close-text' style='display: inline;'>").text("Open"));
         }
@@ -75,11 +76,48 @@ $(document).ready(function(){
         }
             $("#hours").append($("<p style='display: inline;'>").text("      " + (response.hours[0].open[0].start).replace(/(.{2})$/,':$1') + " - " + (response.hours[0].open[0].end).replace(/(.{2})$/,':$1')));
 
+        
+        // Displays Hours of restaurant
+        var daysOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+        for(var i=0; i < response.hours[0].open.length; i++) {
+            $("#restaurant-hours-table").append($(`<tr id='day-${i}'>`));
+            $(`#day-${i}`).append($("<td>").text(daysOfWeek[i]));
+            if(response.hours[0].open[i].end > 1200) {
+                $(`#day-${i}`).append($("<td>").text((response.hours[0].open[i].start).replace(/(.{2})$/,':$1') + "AM   -  " + (parseInt(response.hours[0].open[i].end) - 1200).toString().replace(/(.{2})$/,':$1') + "PM"));
+            }
+            else {
+                $(`#day-${i}`).append($("<td>").text((response.hours[0].open[i].start).replace(/(.{2})$/,':$1') + "   -  " + (response.hours[0].open[i].end).replace(/(.{2})$/,':$1')));
+            }
+        
+        }
 
+        // Displays location of restaurant
+        for(var i=0; i<response.location.display_address.length; i++){
+            $("#restaurant-location").append($("<h6>").text(response.location.display_address[i]));
+        }
 
-
+        // Displays restaurant phone number
+        $("#restaurant-phone").append($('<i class="fas fa-phone">'));
+        $("#restaurant-phone").append(response.display_phone);
 
     });
+
+
+    // Get Restaurant Reviews
+    // $.ajax({
+    //     url: `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/${restaurantId}/reviews`,
+    //     headers: {
+    //         'Authorization':'Bearer xQhqk6iKwI8rprXKZO006ZmPHJq4VXj3uHMkRTQl3Otj3mbw86-ZTGwW6CH5BEjuAY8pmnrwFGV3ReAAXIyh9c4o8SxD2yev4EXkaS9Ny9_MXdQq01_urRTbo45jX3Yx',
+    //     },
+    //     method: "GET",
+    //     dataType: 'json'
+    // }).then(function(response) {
+    //     console.log(response);
+
+
+
+
+    // });
 
 
 

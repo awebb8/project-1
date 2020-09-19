@@ -30,6 +30,10 @@ i {
     padding: 2px;
 }
 
+#ratings {
+    margin-top: 8px;
+}
+
 #open-text {
     color: green;
 }
@@ -40,4 +44,14 @@ i {
 
 #hours {
     margin-top: -15px;
+}
+
+#restaurant-location {
+    margin-top: 30px;
+    font-size: 18px;
+}
+
+#restaurant-phone {
+    margin-top: 30px;
+    font-size: 18px;
 }
