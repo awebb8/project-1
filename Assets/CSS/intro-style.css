@@ -36,3 +36,17 @@ body {
 .radiobuttons {
     margin-left: 20px;
 }
+
+/* feeling hungry button */
+#feeling-hungry {
+    background-color: #4285F4;
+    color: white;
+    border-color: white;
+}
+#feeling-hungry:hover {
+    color: black;
+    border-color: black;
+}
+#feeling-hungry:active {
+    background-color: #5C2018;
+}
