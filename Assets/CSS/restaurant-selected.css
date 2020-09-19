@@ -29,3 +29,15 @@ i {
     color: #5c2018;
     padding: 2px;
 }
+
+#open-text {
+    color: green;
+}
+
+#close-text {
+    color: red;
+}
+
+#hours {
+    margin-top: -15px;
+}

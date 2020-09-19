@@ -51,9 +51,29 @@ $(document).ready(function(){
         $("#ratings").append("   " + response.review_count + " ratings");
 
 
+        if(response.price != undefined) {
+            $("#ratings").append($("<p id='price-line'>").text(response.price + "  •  "));
+        }
+        else {
+            $("#ratings").append($("<p id='price-line'>")); 
+        }
 
-        ratingsStars.append($("<p>").text(response.price));
-        // $("#ratings").append($("<p>").text(response.price));
+        for(var i=0; i < response.categories.length; i++) {
+            if(i==0) {
+                $("#price-line").append(response.categories[i].title);
+            }
+            else {
+                $("#price-line").append(", " + response.categories[i].title);
+            }
+        }
+
+        if(response.hours[0].is_open_now) {
+            $("#hours").append($("<p id='open-text' class='open-close-text' style='display: inline;'>").text("Open"));
+        }
+        else {
+            $("#hours").append($("<p id='close-text class='open-close-text' style='display: inline;'>").text("Closed"));
+        }
+            $("#hours").append($("<p style='display: inline;'>").text("      " + (response.hours[0].open[0].start).replace(/(.{2})$/,':$1') + " - " + (response.hours[0].open[0].end).replace(/(.{2})$/,':$1')));
 
 
 
