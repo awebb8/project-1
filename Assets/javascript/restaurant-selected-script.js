@@ -12,13 +12,29 @@ $(document).ready(function(){
     }).then(function(response) {
         console.log(response);
 
-        // $("#restaurant-image").attr("src", response.image_url);
-
-
-
         $("#restaurant-name").text(response.name);
         // $(".restaurant-price").text(response.price);
         // $("#restaurant-number").text(response.display_phone);
+
+        // Add Restaurant Image
+        // var recipeImage = $("<img>");
+        // recipeImage.attr("src", response.image_url);
+        // recipeImage.attr("style", "width:400px; height:400px;")
+        // $("#restaurant-display").append(recipeImage);
+
+        for(var i = 0; i < response.photos.length; i++) {
+            if(i==0) {
+                $(".carousel-indicators").append(`<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active">`);
+                $(".carousel-inner").append($('<div class="carousel-item active">').append($(`<img src="${response.photos[i]}" class="d-block w-100 restaurantImg" alt="...">`)));
+            }
+            else {
+                $(".carousel-indicators").append(`<li data-target="#carouselExampleIndicators" data-slide-to="${i}" class="active">`);
+                $(".carousel-inner").append($('<div class="carousel-item">').append($(`<img src="${response.photos[i]}" class="d-block w-100 restaurantImg" alt="...">`)));
+            }
+        }
+
+
+
 
     });
 
