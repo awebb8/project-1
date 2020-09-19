@@ -49,7 +49,7 @@ $(document).ready(function(){
         }
 
         // Displays number of reviews
-        $("#ratings").append("   " + response.review_count + " ratings");
+        $("#ratings").append(" " + response.review_count + " ratings");
 
 
         if(response.price != undefined) {
@@ -75,7 +75,7 @@ $(document).ready(function(){
         else {
             $("#hours").append($("<p id='close-text class='open-close-text' style='display: inline;'>").text("Closed"));
         }
-            $("#hours").append($("<p style='display: inline;'>").text("      " + (response.hours[0].open[0].start).replace(/(.{2})$/,':$1') + " - " + (response.hours[0].open[0].end).replace(/(.{2})$/,':$1')));
+            $("#hours").append($("<p style='display: inline; margin-left: 15px;'>").text("" + (response.hours[0].open[0].start).replace(/(.{2})$/,':$1') + "AM - " + (parseInt(response.hours[0].open[0].end)- 1200).toString().replace(/(.{2})$/,':$1') + "PM"));
 
         
         // Displays Hours of restaurant
