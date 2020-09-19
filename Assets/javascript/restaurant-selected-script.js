@@ -16,7 +16,7 @@ $(document).ready(function(){
 
 
 
-        // $(".restaurant-title").text(response.name);
+        $("#restaurant-name").text(response.name);
         // $(".restaurant-price").text(response.price);
         // $("#restaurant-number").text(response.display_phone);
 
