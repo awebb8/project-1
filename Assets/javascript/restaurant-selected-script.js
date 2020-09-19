@@ -22,6 +22,7 @@ $(document).ready(function(){
         // recipeImage.attr("style", "width:400px; height:400px;")
         // $("#restaurant-display").append(recipeImage);
 
+        // Displays photos of restaurant in bootstrap carousel
         for(var i = 0; i < response.photos.length; i++) {
             if(i==0) {
                 $(".carousel-indicators").append(`<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active">`);
@@ -33,7 +34,21 @@ $(document).ready(function(){
             }
         }
 
+        // Displays rating in stars
+        for(var i=0; i < 5; i++) {
+            if(i < Math.floor(response.rating)) {
+                $(".col-sm-8").append($('<i class="fa fa-star fa-2x">'));
+            }
+            else if((response.rating - Math.floor(response.rating)) > 0) {
+                $(".col-sm-8").append($('<i class="fa fa-star-half-o fa-2x">'));
+            }
+            else {
+                $(".col-sm-8").append($('<i class="fa fa-star-o fa-2x">'));
+            }
+        }
 
+        // Displays number of reviews
+        $(".col-sm-8").append($("<p>").text(response.review_count + " ratings"));
 
 
     });
