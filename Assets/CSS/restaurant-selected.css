@@ -15,9 +15,35 @@ body {
     margin-top: 20px;
 }
 
+/* navbar */
 .navbar {
     background-color: #5C2018!important;
+}
+
+.navbar-light .navbar-brand {
     color: white;
+    font-family: 'Mali', cursive;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 30px;
+}
+
+/* back link on navbar */
+a {
+    font-family: 'Mali', cursive;
+    color: white;
+}
+a:hover {
+    color: #D4A59A;
+}
+
+h2 {
+    font-family: 'Mali', cursive;
+    font-weight: bold;
+}
+
+h3, h4 {
+    font-family: 'Mali', cursive;
 }
 
 .restaurantImg {
@@ -54,4 +80,11 @@ i {
 #restaurant-phone {
     margin-top: 30px;
     font-size: 18px;
+}
+
+#restaurant-display, #restaurant-hours {
+    background-color: #F3E0DC;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 30px;
 }
