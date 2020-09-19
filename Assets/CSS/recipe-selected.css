@@ -3,18 +3,37 @@ body {
     height: 100%;
 }
 
-.container {
-    display: grid;
-    justify-content: center;
-    align-content: center;
-    position:absolute;
-    top:0;
-    bottom:0;
-    left:0;
-    right:0;
-}
-
+/* navbar */
 .navbar {
     background-color: #5C2018!important;
+}
+
+.navbar-light .navbar-brand {
     color: white;
+    font-family: 'Mali', cursive;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 30px;
+}
+
+a {
+    font-family: 'Mali', cursive;
+    color: white;
+}
+
+h2 {
+    font-family: 'Mali', cursive;
+    font-weight: bold;
+}
+
+h3, h4 {
+    font-family: 'Mali', cursive;
+}
+
+/* Recipe Ingredients and Instructions, Wine Pairing, and Cost Breakdown sections */
+#recipe-display, #wine-display, #cost-display {
+    background-color: #F3E0DC;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 30px;
 }
