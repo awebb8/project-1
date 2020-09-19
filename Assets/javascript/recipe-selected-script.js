@@ -80,8 +80,7 @@ $.ajax ({
             var ingredientValueUnit = $("<td>");
             var ingredientUnit = $("<p>");
             ingredientUnit.text(response2.ingredients[j].amount.us.unit);
-            ingredientValueUnit.text(response2.ingredients[j].amount.us.value);
-            ingredientValueUnit.text(response2.ingredients[j].amount.us.value);
+            ingredientValueUnit.text((response2.ingredients[j].amount.us.value).toFixed(2));
             var ingredientPrice = $("<td>");
             ingredientPrice.text(response2.ingredients[j].price);
 
