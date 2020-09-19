@@ -39,12 +39,13 @@ $(document).ready(function(){
             if(i < Math.floor(response.rating)) {
                 $("#ratings").append($('<i class="fa fa-star fa-2x">'));
             }
-            else if((response.rating - Math.floor(response.rating)) > 0) {
+            else if((response.rating - Math.floor(response.rating)) > 0 && i < response.rating) {
                 $("#ratings").append($('<i class="fa fa-star-half-o fa-2x">'));
             }
             else {
                 $("#ratings").append($('<i class="fa fa-star-o fa-2x">'));
             }
+
         }
 
         // Displays number of reviews
