@@ -39,16 +39,17 @@ $(document).ready(function(){
             if(i < Math.floor(response.rating)) {
                 $("#ratings").append($('<i class="fa fa-star fa-2x">'));
             }
-            else if((response.rating - Math.floor(response.rating)) > 0) {
+            else if((response.rating - Math.floor(response.rating)) > 0 && i < response.rating) {
                 $("#ratings").append($('<i class="fa fa-star-half-o fa-2x">'));
             }
             else {
                 $("#ratings").append($('<i class="fa fa-star-o fa-2x">'));
             }
+
         }
 
         // Displays number of reviews
-        $("#ratings").append("   " + response.review_count + " ratings");
+        $("#ratings").append(" " + response.review_count + " ratings");
 
 
         if(response.price != undefined) {
@@ -74,7 +75,7 @@ $(document).ready(function(){
         else {
             $("#hours").append($("<p id='close-text class='open-close-text' style='display: inline;'>").text("Closed"));
         }
-            $("#hours").append($("<p style='display: inline;'>").text("      " + (response.hours[0].open[0].start).replace(/(.{2})$/,':$1') + " - " + (response.hours[0].open[0].end).replace(/(.{2})$/,':$1')));
+            $("#hours").append($("<p style='display: inline; margin-left: 15px;'>").text("" + (response.hours[0].open[0].start).replace(/(.{2})$/,':$1') + "AM - " + (parseInt(response.hours[0].open[0].end)- 1200).toString().replace(/(.{2})$/,':$1') + "PM"));
 
         
         // Displays Hours of restaurant
@@ -91,14 +92,21 @@ $(document).ready(function(){
         
         }
 
+        // Displays restaurant phone number
+        $("#restaurant-phone").append($('<i class="fas fa-phone">'));
+        $("#restaurant-phone").append(response.display_phone);
+
         // Displays location of restaurant
         for(var i=0; i<response.location.display_address.length; i++){
             $("#restaurant-location").append($("<h6>").text(response.location.display_address[i]));
         }
 
-        // Displays restaurant phone number
-        $("#restaurant-phone").append($('<i class="fas fa-phone">'));
-        $("#restaurant-phone").append(response.display_phone);
+        // Displays restaurant location on google maps
+        $("#map").append($(`<iframe
+        frameborder="0" style="border:0"
+        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDoNlnCZJwCejPu0t0UHALWsc-1WnuwZdk
+          &q=${response.name}">`));
+
 
     });
 
