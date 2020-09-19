@@ -1,12 +1,12 @@
+.container {
+    display: block;
+}
+
 #container-body{
     margin-top: 10px;
 }
 #dinner-navbar{
     color: white;
-}
-
-.results-card{
-    margin-top: 10px;
 }
 
 img{
@@ -33,10 +33,8 @@ body {
 .results-card{
     background-color: #5C2018;
     color: white;
+    width: 18rem;
+    margin-top: 10px;
     margin-left: 5px;
     margin-right: 5px;
-}
-
-.container-fluid{
-   width: 80vw;
 }
