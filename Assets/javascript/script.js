@@ -4,7 +4,8 @@ $(document).ready(function() {
     const ZOMATOAPIKEY = "9723ed5e62a95b63e3f30544b70f8fdb";
     const SPOONAPIKEY = "eedaf08410ff4e439dbac4b966ee5e86";
 
-    $("#search-button").on("click", function() {
+    $("#search-button").on("click", function(event) {
+        event.preventDefault();
         // Store user search into searchQuery variable
         var searchQuery = $("#search-input").val();
         // Clear localStorage to prevent past searches from breaking logic
