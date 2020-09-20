@@ -1,22 +1,54 @@
 body {
     background-color: #D4A59A;
     height: 100%;
+    text-align: center;
 }
 
-.container {
-    display: grid;
-    justify-content: center;
-    align-content: center;
-    position:absolute;
-    top:0;
-    bottom:0;
-    left:0;
-    right:0;
+h1 {
+    font-family: 'Mali', cursive;
+    font-style: italic;
+    margin-bottom: 0px;
 }
 
-.navbar {
-    background-color: #5C2018!important;
+/* Jumbotron */
+.jumbotron {
+    background-color: #5C2018;
     color: white;
+    padding: 30px 20px 40px 20px;
+    margin-bottom: 20px;
+}
+
+#search-input, #search-button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Style for random cards */
+.card {
+    background-color: #F3E0DC;
+    display:inline-block;
+    margin: 0px 10px 10px 10px;
+}
+.cropped {
+    width: 400px;
+    height: 230px;
+    object-fit: cover;
+    overflow: hidden;
+}
+.cropped img {
+    margin: 10px 0px 0px 0px;
+    width: 90%;
+}
+
+/* Search bar */
+.form-control {
+    background-color: #F3E0DC;
+    border: 1px solid #ffffff;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    margin: 0;
 }
 
 /* search button */
@@ -24,6 +56,10 @@ body {
     background-color: #4285F4;
     color: white;
     border-color: white;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
 }
 #search-button:hover {
     color: black;
@@ -31,10 +67,6 @@ body {
 }
 #search-button:active {
     background-color: #5C2018;
-}
-
-.radiobuttons {
-    margin-left: 20px;
 }
 
 /* feeling hungry button */
