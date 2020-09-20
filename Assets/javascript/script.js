@@ -11,6 +11,10 @@ $(document).ready(function() {
         // Clear localStorage to prevent past searches from breaking logic
         localStorage.clear();
 
+        $("#search-button").empty();
+        $("#search-button").append($('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>'));
+        
+
         // Check which radio button user selected
         if($("input[type=radio]:checked", ".radiobuttons").val() === "option1") {
             // User selected Eat In - Make AJAX call to Spoonacular
@@ -26,7 +30,11 @@ $(document).ready(function() {
 
                 // After making AJAX call, redirect user to search-results.html
                 window.location.href = "search-results.html";                    
+            }).fail(function(response) {
+                $("#search-button").empty();
+                $("#search-button").append($('<i class="fas fa-search">'));
             });
+
 
         }
 
@@ -47,9 +55,16 @@ $(document).ready(function() {
                     // After making AJAX call, redirect user to search-results.html
                     window.location.href = "search-results.html";   
                 });
+
                 }
+            function error() {
+                $("#search-button").empty();
+                $("#search-button").append($('<i class="fas fa-search">'));
+                console.log("couldnt retrieve your location");
+            }
         
-            navigator.geolocation.getCurrentPosition(success);
+            navigator.geolocation.getCurrentPosition(success, error);
+
         }
 
 
