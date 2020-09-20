@@ -2,9 +2,6 @@
     display: block;
 }
 
-#container-body{
-    margin-top: 10px;
-}
 #dinner-navbar{
     color: white;
 }
@@ -24,6 +21,18 @@ body {
     color: white;
 }
 
+h1 {
+    color: white;
+    font-family: 'Mali', cursive;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 30px;
+}
+
+h1:hover {
+    color: black;
+}
+
 #primary-row{
     background-color: #D4A59A;
     align-content: center;
@@ -37,4 +46,9 @@ body {
     margin-top: 10px;
     margin-left: 5px;
     margin-right: 5px;
+}
+
+h6 {
+    margin-top: 10px;
+    margin-bottom: -10px;
 }

@@ -102,8 +102,20 @@ h1 {
     }
 }
 
+/* Custom styling of radio button */
 .custom-control-input:checked ~ .custom-control-label::before {
     color: #fff;
     border-color: #5C2018;
     background-color: #5C2018;
+}
+
+/* Custom styling of randomizer buttons */
+.btn-primary {
+    background-color: #5C2018;
+    border-color: #5C2018;
+}
+
+.btn-primary:hover {
+    background-color: #D4A59A;
+    border-color: #D4A59A;
 }
