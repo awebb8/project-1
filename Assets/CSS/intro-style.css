@@ -19,7 +19,7 @@ h1 {
 }
 
 #search-input, #search-button {
-    margin-top: 10px 0px 10px 0px;
+    margin: 10px 0px 10px 0px;
 }
 
 /* Style for random cards */
