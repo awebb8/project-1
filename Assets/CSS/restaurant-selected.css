@@ -15,10 +15,47 @@ body {
     margin-top: 20px;
 }
 
+/* navbar */
 .navbar {
     background-color: #5C2018!important;
+}
+
+.navbar-light .navbar-brand {
+    color: white;
+    font-family: 'Mali', cursive;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 30px;
+}
+
+/* back link on navbar */
+a {
+    font-family: 'Mali', cursive;
     color: white;
 }
+a:hover {
+    color: #D4A59A;
+}
+
+h2 {
+    font-family: 'Mali', cursive;
+    font-weight: bold;
+}
+
+h3, h4 {
+    font-family: 'Mali', cursive;
+}
+
+.table td, .table th {
+    border-top: 1px solid grey;
+}
+
+.table thead th {
+    border-bottom: 2px solid grey;
+}
+
+
+/* Restaurant Styling */
 
 .restaurantImg {
     width: 400px;
@@ -55,3 +92,27 @@ i {
     margin-top: 30px;
     font-size: 18px;
 }
+
+#restaurant-display, #restaurant-hours {
+    background-color: #F3E0DC;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 30px;
+}
+
+
+h6 {
+    font-weight: 700;
+    margin-top: -5px;
+}
+
+#restaurant-name {
+    font-size: 40px;
+}
+
+iframe {
+    margin-top: 10px;
+    height: 250px;
+    width: 100%;
+}
+
