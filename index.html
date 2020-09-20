@@ -8,36 +8,55 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"/>
+        <link href="https://fonts.googleapis.com/css2?family=Mali:ital,wght@1,700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="./Assets/CSS/intro-style.css">
     </head>
     <body>
-        <nav class="navbar navbar-light bg-light justify-content-center">
-            <h1>What's for Dinner?</h1>
-        </nav>
 
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <form class="form-check form-check-inline">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search for Food" aria-label="Search" id="search-input">
-                        <button class="btn my-2 my-sm-0" type="submit" id="search-button"><i class="fas fa-search"></i></button>
-                    </form>
-                </div>
+        <!-- Jumbotron -->
+        <div class="jumbotron jumbotron-fluid">
+            <h1 class="display-4">What's for Dinner?</h1>
+            <hr class="my-4">
+            <p>It's the age old question:  What's for Dinner?  Click to find out.</p>
+                <!-- Form for search field and button -->
+                <form class="form-check form-check-inline">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search for Food" aria-label="Search" id="search-input">
+                    <button class="btn my-2 my-sm-0" type="submit" id="search-button"><i class="fas fa-search"></i></button>
+                </form>
+                <!-- Form for radio buttons -->
+                <form class="radiobuttons">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked="checked">
+                        <label class="form-check-label" for="inlineRadio1">Eat in</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                        <label class="form-check-label" for="inlineRadio2">Eat out</label>
+                    </div>
+                </form>
+        </div>
+
+        <!-- Random Recipe Card -->
+        <div class="card" style="width: 25rem;">
+            <div class="cropped">
+                <img src="./Assets/images/cooking-img.jpg" alt="Card image cap">
             </div>
+            <div class="card-body">
+                <h5 class="card-title">Random Recipe</h5>
+                <p class="card-text">Feeling spontaneous? Click the button below to go to a recipe chosen at random.</p>
+                <a href="#" class="btn btn-primary" id="random-recipe">Let's Cook!</a>
+            </div>
+        </div>
 
-            <div class="row">
-                <div class="col-sm-12">
-                    <form class="radiobuttons">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked="checked">
-                            <label class="form-check-label" for="inlineRadio1">Eat in</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                            <label class="form-check-label" for="inlineRadio2">Eat out</label>
-                        </div>
-                    </form>
-                </div>
+        <!-- Random Restaurant Card -->
+        <div class="card" style="width: 25rem;">
+            <div class="cropped">
+                <img src="./Assets/images/restaurant-image.jpg" alt="Card image cap">
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Random Restaurant</h5>
+                <p class="card-text">Feeling spontaneous? Click the button below to go to a restaurant chosen at random.</p>
+                <a href="#" class="btn btn-primary" id="random-restaurant">Serve Me!</a>
             </div>
         </div>
 
