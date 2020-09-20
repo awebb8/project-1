@@ -30,7 +30,6 @@ h2 {
     font-family: 'Mali', cursive;
     font-weight: bold;
 }
-
 h3, h4 {
     font-family: 'Mali', cursive;
 }
@@ -40,11 +39,18 @@ h3, h4 {
     background-color: #F3E0DC;
     padding: 20px;
     margin-top: 20px;
-    border-radius: 30px;
+    border-radius: 20px;
+    word-wrap: break-word;
+}
+
+img {
+    width: 100%;
 }
 
 .table td, .table th {
     border-top: 1px solid grey;
+    font-size: 12px;
+    padding: 0px;
 }
 
 .table thead th {

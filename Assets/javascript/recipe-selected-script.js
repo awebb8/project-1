@@ -82,7 +82,7 @@ $.ajax ({
             ingredientUnit.text(response2.ingredients[j].amount.us.unit);
             ingredientValueUnit.text((response2.ingredients[j].amount.us.value).toFixed(2));
             var ingredientPrice = $("<td>");
-            ingredientPrice.text(response2.ingredients[j].price);
+            ingredientPrice.text("$" + (((response2.ingredients[j].price)/100).toFixed(2)));
 
             var newRow = $("<tr>");
             // var numberColumn = $('<th scope="row">2');
