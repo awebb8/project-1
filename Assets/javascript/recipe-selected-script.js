@@ -48,35 +48,33 @@ $.ajax ({
     recipeDisplay.append(recipeInstructionsText);
     recipeInstructionsText.append(responseSourceUrl);
 
-    // Add Wine Pairing
+    // Add Wine Pairing IF wine pairing is available, otherwise offer the current recommended wine
+    if (response.winePairing.pairingText == "") {
+    var wineRecommend = $("#wine-display");
+    var wineRecommendText = $("<p>");
+    wineRecommendText.text("We recommend this red blend");
+    wineRecommend.append(wineRecommendText);
+    }
+    else {
     var wineDisplay = $("#wine-display");
     var winePairingText = $("<p>");
     winePairingText.text(response.winePairing.pairingText);
     wineDisplay.append(winePairingText);
-
-    // Add Grocery List with Cost Breakdown
-    console.log(response.extendedIngredients[0].name);
-    console.log(response.extendedIngredients[0].aisle);
+    }
 
 
-
+    // Make ajax call for cost breakdown section
     $.ajax ({
         url: "https://api.spoonacular.com/recipes/" + recipeId + "/priceBreakdownWidget.json?apiKey=" + SPOONAPIKEY,
         method: "GET"
     }).then(function(response2) {
-        console.log(response2);
-        console.log(response2.ingredients[0].amount.us.value);
-        console.log(response2.ingredients[0].amount.us.unit);
-        console.log(response2.ingredients[0].price);
 
-        // var count = 0;
 
+        // Create table for cost breakdown section
         for (var j = 0; j <response2.ingredients.length; j++) {
             var ingredientGroceryList = $("#ingredient-grocery-list");
             var ingredientName = $("<td>");
             ingredientName.text(response2.ingredients[j].name);
-            // var ingredientAisle = $("<td>");
-            // ingredientAisle.text(response.extendedIngredients[j].aisle);
             var ingredientValueUnit = $("<td>");
             var ingredientUnit = $("<p>");
             ingredientUnit.text(response2.ingredients[j].amount.us.unit);
@@ -85,12 +83,9 @@ $.ajax ({
             ingredientPrice.text("$" + (((response2.ingredients[j].price)/100).toFixed(2)));
 
             var newRow = $("<tr>");
-            // var numberColumn = $('<th scope="row">2');
 
             ingredientGroceryList.append(newRow);
-            // ingredientGroceryList.append(numberColumn);
             ingredientGroceryList.append(ingredientName);
-            // ingredientGroceryList.append(ingredientAisle);
             ingredientGroceryList.append(ingredientValueUnit);
             ingredientValueUnit.append(ingredientUnit);
             ingredientGroceryList.append(ingredientPrice);
