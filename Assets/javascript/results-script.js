@@ -8,6 +8,11 @@ $(document).ready(function() {
     var recipesSearchResults = JSON.parse(localStorage.getItem("recipesSearchResults"));
     var restaurantsSearchResult = JSON.parse(localStorage.getItem("restaurantsSearchResults"));
 
+    // Check to see if a response is stored in localStorage - if not, return to index.html
+    if(recipesSearchResults === null && restaurantsSearchResult === null){
+        window.location.href = "index.html";
+    }
+
     // Check which radio button user selected - value is retrieved from localStorage
     if(localStorage.getItem("userRadioButtonOption")) {
         console.log(recipesSearchResults);
@@ -34,7 +39,7 @@ $(document).ready(function() {
     // Dynamically update search-results.html with response from Spoonacular
     function showRecipeResults() {
     $("primary-row").empty();
-    for(var i=0; i<10; i++){
+    for(var i=0; i<recipesSearchResults.results.length; i++){
         var resultsCard = $("<div class='card card-body col-xs-3 results-card'>");
     
         var resultsA = $("<a href='#'>");
@@ -64,7 +69,7 @@ $(document).ready(function() {
     // Dynamically update search-results.html with response from Zomato
     function showRestaurantResults() {
         $("primary-row").empty();
-        for(var i=0; i<10; i++){
+        for(var i=0; i<restaurantsSearchResult.businesses.length; i++){
             var resultsCard = $("<div class='card card-body col-xs-3 results-card'>");
         
             var resultsA = $("<a href='#'>");
