@@ -11,6 +11,10 @@ $(document).ready(function() {
         // Clear localStorage to prevent past searches from breaking logic
         localStorage.clear();
 
+        $("#search-button").empty();
+        $("#search-button").append($('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>'));
+        
+
         // Check which radio button user selected
         if($("input[type=radio]:checked", ".radiobuttons").val() === "option1") {
             // User selected Eat In - Make AJAX call to Spoonacular
@@ -26,7 +30,11 @@ $(document).ready(function() {
 
                 // After making AJAX call, redirect user to search-results.html
                 window.location.href = "search-results.html";                    
+            }).fail(function(response) {
+                $("#search-button").empty();
+                $("#search-button").append($('<i class="fas fa-search">'));
             });
+
 
         }
 
@@ -47,9 +55,16 @@ $(document).ready(function() {
                     // After making AJAX call, redirect user to search-results.html
                     window.location.href = "search-results.html";   
                 });
+
                 }
+            function error() {
+                $("#search-button").empty();
+                $("#search-button").append($('<i class="fas fa-search">'));
+                console.log("couldnt retrieve your location");
+            }
         
-            navigator.geolocation.getCurrentPosition(success);
+            navigator.geolocation.getCurrentPosition(success, error);
+
         }
 
 
@@ -60,7 +75,8 @@ $(document).ready(function() {
     var foodKeywordArray = ["chicken", "broccoli", "pasta", "roast", "ham", "hamburger", "beef", "rice", "seafood", "fast food", "noodles", "salads", "stew", "soup", "tacos", "fried chicken", "gyro", "pizza", "quesadilla", "shrimp", "lobster", "roti", "ravioli", "barbecue", "pork", "meatloaf", "french toast", "hot dogs", "cheese stake", "steak", "crabs", "waffles", "Stromboli", "guacamole", "chicken salad", "hot wings", "deli", "sushi", "Japanese", "mexican", "vegetable", "smoothies", "breakfast", "Jamaican", "baked potato", "noodles", "shrimp", "nachos", "fish", "pasta", "lasagna", "deli"];
 
     // Event listener for random recipe button
-    $("#random-recipe").on("click", function() {
+    $("#random-recipe").on("click", function(event) {
+        event.preventDefault();
         // Clear localStorage to prevent past searches from breaking logic
         localStorage.clear();
 
@@ -85,7 +101,8 @@ $(document).ready(function() {
     });
 
     // Event listener for random restaurant button
-    $("#random-restaurant").on("click", function() {
+    $("#random-restaurant").on("click", function(event) {
+        event.preventDefault();
         localStorage.clear();
 
         var randomIndex = Math.floor(Math.random() * foodKeywordArray.length);

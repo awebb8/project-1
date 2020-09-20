@@ -50,7 +50,7 @@ $(document).ready(function() {
         console.log("data-id");
        
     
-        var resultsTitle = $("<h6 class='card-header'>");
+        var resultsTitle = $("<h6>");
         resultsTitle.text(recipesSearchResults.results[i].title);
     
         resultsA.append(resultsImg);
@@ -79,7 +79,7 @@ $(document).ready(function() {
             resultsImg.attr("data-id", restaurantsSearchResult.businesses[i].id);
            
         
-            var resultsTitle = $("<h6 class='card-header'>");
+            var resultsTitle = $("<h6>");
             resultsTitle.text(restaurantsSearchResult.businesses[i].name);
         
             resultsA.append(resultsImg);

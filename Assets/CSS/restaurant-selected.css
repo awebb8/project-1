@@ -116,3 +116,10 @@ iframe {
     width: 100%;
 }
 
+.nav-link {
+    color: white!important;
+}
+
+.nav-link:hover {
+    color: black!important;
+}
