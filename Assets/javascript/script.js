@@ -59,6 +59,7 @@ $(document).ready(function() {
 
     var foodKeywordArray = ["chicken", "broccoli", "pasta", "roast", "ham", "hamburger", "beef", "rice", "seafood", "fast food", "noodles", "salads", "stew", "soup", "tacos", "fried chicken", "gyro", "pizza", "quesadilla", "shrimp", "lobster", "roti", "ravioli", "barbecue", "pork", "meatloaf", "french toast", "hot dogs", "cheese stake", "steak", "crabs", "waffles", "Stromboli", "guacamole", "chicken salad", "hot wings", "deli", "sushi", "Japanese", "mexican", "vegetable", "smoothies", "breakfast", "Jamaican", "baked potato", "noodles", "shrimp", "nachos", "fish", "pasta", "lasagna", "deli"];
 
+    // Event listener for random recipe button
     $("#random-recipe").on("click", function() {
         // Clear localStorage to prevent past searches from breaking logic
         localStorage.clear();
@@ -73,7 +74,6 @@ $(document).ready(function() {
             }).then(function(response) {
                 console.log(response);
 
-                // Generates a random number between 1-9
                 var randomIndex2 = Math.floor(Math.random() * response.results.length);
                 var randomRecipeId = response.results[randomIndex2].id;
 
@@ -84,6 +84,38 @@ $(document).ready(function() {
 
     });
 
+    // Event listener for random restaurant button
+    $("#random-restaurant").on("click", function() {
+        localStorage.clear();
 
+        var randomIndex = Math.floor(Math.random() * foodKeywordArray.length);
+        var randomSearch = foodKeywordArray[randomIndex];
+        console.log(foodKeywordArray[randomIndex]);
+
+        function success(pos) {
+            var crd = pos.coords;
+            $.ajax({
+                url: `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=${randomSearch}&latitude=${crd.latitude}&longitude=${crd.longitude}&limit=15`,
+                headers: {
+                    'Authorization':'Bearer xQhqk6iKwI8rprXKZO006ZmPHJq4VXj3uHMkRTQl3Otj3mbw86-ZTGwW6CH5BEjuAY8pmnrwFGV3ReAAXIyh9c4o8SxD2yev4EXkaS9Ny9_MXdQq01_urRTbo45jX3Yx',
+                },
+                method: "GET",
+                dataType: 'json'
+            }).then(function(response) {
+                console.log(response);
+
+                var randomIndex2 = Math.floor(Math.random() * response.businesses.length);
+                var randomRecipeId = response.businesses[randomIndex2].id;
+
+                localStorage.setItem("recipeDataId", randomRecipeId);
+                
+
+                window.location.href = "restaurant-selected.html";   
+            });
+            }
+    
+        navigator.geolocation.getCurrentPosition(success);
+
+    });
 
 });
