@@ -8,6 +8,11 @@ $(document).ready(function() {
     var recipesSearchResults = JSON.parse(localStorage.getItem("recipesSearchResults"));
     var restaurantsSearchResult = JSON.parse(localStorage.getItem("restaurantsSearchResults"));
 
+    // Check to see if a response is stored in localStorage - if not, return to index.html
+    if(recipesSearchResults === null && restaurantsSearchResult === null){
+        window.location.href = "index.html";
+    }
+
     // Check which radio button user selected - value is retrieved from localStorage
     if(localStorage.getItem("userRadioButtonOption")) {
         console.log(recipesSearchResults);
