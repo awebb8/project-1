@@ -19,8 +19,7 @@ h1 {
 }
 
 #search-input, #search-button {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 10px 0px 10px 0px;
 }
 
 /* Style for random cards */
@@ -69,16 +68,24 @@ h1 {
     background-color: #5C2018;
 }
 
-/* feeling hungry button */
-#feeling-hungry {
-    background-color: #4285F4;
-    color: white;
-    border-color: white;
+@media (min-width: 576px) {
+    .mr-sm-2, .mx-sm-2 {
+        margin-right: 0px!important;
+    }
 }
-#feeling-hungry:hover {
-    color: black;
-    border-color: black;
-}
-#feeling-hungry:active {
-    background-color: #5C2018;
+
+@media (max-width: 420px) {
+    .card {
+        width: 90%!important;
+    }
+    .cropped {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        overflow: hidden;
+    }
+    .cropped img {
+        margin: 10px 0px 0px 0px;
+        width: 90%;
+    }
 }
