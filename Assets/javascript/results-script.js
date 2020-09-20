@@ -34,7 +34,7 @@ $(document).ready(function() {
     // Dynamically update search-results.html with response from Spoonacular
     function showRecipeResults() {
     $("primary-row").empty();
-    for(var i=0; i<10; i++){
+    for(var i=0; i<recipesSearchResults.results.length; i++){
         var resultsCard = $("<div class='card card-body col-xs-3 results-card'>");
     
         var resultsA = $("<a href='#'>");
@@ -64,7 +64,7 @@ $(document).ready(function() {
     // Dynamically update search-results.html with response from Zomato
     function showRestaurantResults() {
         $("primary-row").empty();
-        for(var i=0; i<10; i++){
+        for(var i=0; i<restaurantsSearchResult.businesses.length; i++){
             var resultsCard = $("<div class='card card-body col-xs-3 results-card'>");
         
             var resultsA = $("<a href='#'>");
