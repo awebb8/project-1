@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-const SPOONAPIKEY = "c27de7a75c74494f8fe916321c2ede25";
+const SPOONAPIKEY = "55eea158ec04428d8c173a8ead64a25f";
 var recipeId = localStorage.getItem("recipeDataId");
 
 
@@ -53,9 +53,11 @@ $.ajax ({
     var wineRecommend = $("#wine-display");
     var wineRecommendText = $("<p>");
     wineRecommendText.text("There is no specific wine pairing for this recipe, however, we currently recommend Chateau Bellevue Bordeaux.  Rich red fruit flows on and on in this charming little wine. The ripe tannins make it a great wine to bring home for dinner. A harmonious blend of 65% Merlot, 25% Cabernet Sauvignon and 10% Cabernet Franc vines that are over 20 years old.");
+    var wineRecommendPic = $('<img class="cropped">');
+    wineRecommendPic.attr("src", "Assets/images/bordeaux-wine-img.png");
+    wineRecommendPic.attr("style", "height: 100%; width: 20%; float:left;");
+    wineRecommend.append(wineRecommendPic);
     wineRecommend.append(wineRecommendText);
-    var wineRecommendPic = $('<img "src", ./Assets/images/bordeaux-wine-img.png');
-    wineRecommend.append = $(wineRecommendPic);
     }
     else {
     var wineDisplay = $("#wine-display");

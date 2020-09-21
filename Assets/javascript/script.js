@@ -2,7 +2,7 @@ $(document).ready(function() {
 
     // API KEYS FOR ZOMATO AND SPOONACULAR
     const ZOMATOAPIKEY = "9723ed5e62a95b63e3f30544b70f8fdb";
-    const SPOONAPIKEY = "c27de7a75c74494f8fe916321c2ede25";
+    const SPOONAPIKEY = "55eea158ec04428d8c173a8ead64a25f";
 
     $("#search-button").on("click", function(event) {
         event.preventDefault();

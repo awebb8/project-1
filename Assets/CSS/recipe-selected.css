@@ -57,3 +57,7 @@ img {
 .table thead th {
     border-bottom: 2px solid grey;
 }
+
+.col-sm-4 {
+    display: block;
+}
