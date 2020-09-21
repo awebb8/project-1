@@ -68,7 +68,7 @@ $(document).ready(function() {
 
     // Dynamically update search-results.html with response from Zomato
     function showRestaurantResults() {
-        $("primary-row").empty();
+        $("#primary-row").empty();
         for(var i=0; i<restaurantsSearchResult.businesses.length; i++){
             var resultsCard = $("<div class='card card-body col-xs-3 results-card'>");
         
