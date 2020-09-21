@@ -98,7 +98,7 @@ i {
     background-color: #F3E0DC;
     padding: 20px;
     margin-top: 20px;
-    border-radius: 30px;
+    border-radius: 10px;
 }
 
 
@@ -123,4 +123,8 @@ iframe {
 
 .nav-link:hover {
     color: black!important;
+}
+
+.col-sm-4 {
+    margin-bottom: 30px;
 }

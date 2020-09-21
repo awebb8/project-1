@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-const SPOONAPIKEY = "55eea158ec04428d8c173a8ead64a25f";
+const SPOONAPIKEY = "92069cc7d113464cbf6b399c6b7dec3a";
 var recipeId = localStorage.getItem("recipeDataId");
 
 

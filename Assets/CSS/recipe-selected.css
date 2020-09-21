@@ -61,3 +61,7 @@ img {
 .col-sm-4 {
     display: block;
 }
+
+.col-sm-8 {
+    margin-bottom: 30px;
+}
