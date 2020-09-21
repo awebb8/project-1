@@ -12,8 +12,9 @@ img{
 }
 
 body {
-    background-color: #D4A59A;
     height: 100%;
+    background: linear-gradient( rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45) ), url("../images/food-hero-blurred.jpg");
+    background-size: cover;
 }
 
 .navbar {
@@ -34,21 +35,32 @@ h1:hover {
 }
 
 #primary-row{
-    background-color: #D4A59A;
-    align-content: center;
+    /* background-color: #D4A59A; */
+    margin: auto;
+    width: 80%;
 }
 
 
 .results-card{
-    background-color: #5C2018;
-    color: white;
+    background-color: #F3E0DC;
+    color: black;
     width: 18rem;
     margin-top: 10px;
     margin-left: 5px;
     margin-right: 5px;
 }
 
+.card-body {
+    flex: none;
+}
+
 h6 {
     margin-top: 10px;
     margin-bottom: -10px;
 }
+
+/* Add shadow effect to cards on hover */
+.results-card:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+

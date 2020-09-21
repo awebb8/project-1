@@ -33,6 +33,7 @@ It is useful for comparing recipes and restaurants, for discovering recipes and 
 ## Credits
 
 Credit goes to the wonderful team that created it. Alix Webb, Vincent Kendrick, David Pan, and ANdrew Marcus. We would also like to thank the creators of the Spoonacular and Yep APIs.
+Credits to Adnan Puzić for the free food hero image: https://www.behance.net/gallery/29090891/Food-Hero-free-download
 
 ## Licenses
 
