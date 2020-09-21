@@ -1,6 +1,11 @@
 body {
+<<<<<<< HEAD
     background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("../images/food-hero-image.jpg");
+=======
+>>>>>>> 384a78ff35c114ef761255cfd911af7b0c23ed23
     height: 100%;
+    background: linear-gradient( rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45) ), url("../images/food-hero-blurred.jpg");
+    background-size: cover;
 }
 
 .container {
