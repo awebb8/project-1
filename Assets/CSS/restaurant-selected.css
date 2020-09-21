@@ -1,5 +1,5 @@
 body {
-    background-color: #D4A59A;
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("../images/food-hero-image.jpg");
     height: 100%;
 }
 
