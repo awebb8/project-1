@@ -12,9 +12,8 @@ img{
 }
 
 body {
-    /* background-color: #D4A59A; */
     height: 100%;
-    background: linear-gradient( rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75) ), url("../images/food-hero-image.jpg");
+    background: linear-gradient( rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45) ), url("../images/food-hero-blurred.jpg");
     background-size: cover;
 }
 
@@ -37,7 +36,8 @@ h1:hover {
 
 #primary-row{
     /* background-color: #D4A59A; */
-    align-content: center;
+    margin: auto;
+    width: 80%;
 }
 
 
@@ -63,3 +63,4 @@ h6 {
 .results-card:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+

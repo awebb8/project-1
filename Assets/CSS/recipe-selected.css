@@ -1,6 +1,7 @@
 body {
-    background-color: #D4A59A;
     height: 100%;
+    background: linear-gradient( rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45) ), url("../images/food-hero-blurred.jpg");
+    background-size: cover;
 }
 
 /* navbar */
@@ -39,7 +40,7 @@ h3, h4 {
     background-color: #F3E0DC;
     padding: 20px;
     margin-top: 20px;
-    border-radius: 20px;
+    border-radius: 10px;
     word-wrap: break-word;
 }
 
